@@ -1,0 +1,17 @@
+<!--Đặt ngIf phòng trường hợp truyền vào id không tồn tại, nếu không đặt có báo lỗi
+Biến #f sẽ đại diện cho form-->
+<form class="form" *ngIf="employee" #f="ngForm" (ngSubmit)="saveForm()">
+  <table class="table">
+    <tr>
+      <td>{{ employee.id }}</td>
+      <td><input type="text" name="name" [(ngModel)]="employee.name" /></td>
+      <td><input type="number" name="age" [(ngModel)]="employee.age" /></td>
+      <td>
+        <button type="submit">Save</button>
+        <button>Cancel</button>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<button class="btn btn-default" (click)="goToEmployee()">go back</button>

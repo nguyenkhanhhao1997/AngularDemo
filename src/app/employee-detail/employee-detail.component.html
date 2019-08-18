@@ -1,0 +1,9 @@
+ <!--Đặt ngIf phòng trường hợp truyền vào id không tồn tại, nếu không đặt có báo lỗi-->
+<table class="table" *ngIf="employee">
+    <tr>
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.age}}</td>
+    </tr>
+</table>
+<button class="btn btn-default" (click)="goToEmployee()">go back</button>

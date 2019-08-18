@@ -1,0 +1,32 @@
+<h2>My demo {{title}}</h2>
+
+<h3>One way binding</h3>
+<input type='text' [value]='inputText'/>
+<h5 [class.blueText]='applyBlue'>Test apply class</h5>
+<h5 [style.color]="blueColor?'blue':'orange'">Test apply style</h5>
+
+<input type="text" #name/>
+<button (click)="onClick(name.value)">click to log</button>
+
+<h3>Two way binding</h3>
+<input type="text" [(ngModel)]="firstName"/>
+<br/>
+<input type="text" [(ngModel)]="lasttName"/>
+<br/>
+Full name: {{firstName}} {{lasttName}}
+
+<h3>Directives</h3>
+<h5 *ngIf="showHello">ngIf: Hello motherfucker!</h5>
+<div [ngSwitch]="thisIs">
+    <p *ngSwitchCase="'bike'">ngSwitch: this is bike</p>
+    <p *ngSwitchCase="'car'">ngSwitch: this is car</p>
+    <p *ngSwitchDefault>ngSwitch: this is nothing</p>
+</div>
+
+ngFor:
+<ul>
+    <li *ngFor="let color of colors">{{color}}</li>
+</ul>
+ngClass:
+<h5 [ngClass]="{redText:rText,backgroundBlack:bBlack}">test ngClass</h5>
+<button (click)="toggleText()">toggle text</button>

@@ -1,0 +1,24 @@
+<h3>Employee List</h3>
+<div class="row">
+  <a class="btn btn-danger" [routerLink]="[ '/employee-add' ]">Detail</a>
+</div>
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.name}}</td>
+      <td>
+        <a class="btn btn-default" [routerLink]="[ '/employee-detail', employee.id ]">Detail</a>
+        <a class="btn btn-primary" [routerLink]="[ '/employee-edit', employee.id ]">Edit</a>
+        <button class="btn btn-danger" (click)="delete(employee.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,4 @@
+<h5>input: {{childInput}}</h5>
+<button [disabled]="vote" (click)="voted(true)">agree</button>
+<button [disabled]="vote" (click)="voted(false)">disagree</button>
+Voted: {{vote}} 
